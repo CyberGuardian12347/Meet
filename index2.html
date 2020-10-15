@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restart</title>
+    <style type="text/css">
+        #container{
+        margin:1px auto;
+            height:375px;
+            width:500px;
+            border:10px solid black;
+        }
+        #video{
+            width: 500px;
+    height: 375px;
+    background-color: #666;
+        }
+        #video2{
+
+            border:10px solid #222;
+            height:56px;
+            width:500px;
+            height:375px
+        }
+        #video2{
+            width: 500px;
+    height: 375px;
+    background-color: #666;
+    border:10px solid black;
+
+
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <div id="header">
+        <video id="video" autoplay="true" controls="" allowfullscreen></video>
+        <audio id="audio"></audio>
+        <video id="video2" autoplay="true" othercontrols allowfullscreen></video>
+        <audio id="audio2"></audio>
+    </div>
+</div>
+<script type="text/javascript">
+    var video = document.querySelector("#video");
+
+if (navigator.mediaDevices.getUserMedia) {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (stream) {
+      video.srcObject = stream;
+    })
+    .catch(function (err0r) {
+      console.log("Something went wrong!");
+    });
+}
+
+
+var audio = document.querySelector("#audio");
+if (navigator.mediaDevices.getUserMedia) {
+  navigator.mediaDevices.getUserMedia({ audio: true })
+    .then(function (stream) {
+      audio.srcObject = stream;
+    })
+    .catch(function (err0r) {
+      console.log("Something went wrong!");
+    });
+}
+var share = document.querySelector("#share")
+if (navigator.mediaDevices.getDisplyMedia) {
+  navigator.mediaDevices.getDisplayMedia({ screen: true })
+    .then(function (stream) {
+      share.srcObject = stream;
+    })
+    .catch(function (err0r) {
+      console.log("Something went wrong!");
+    });
+}
+var video2 = document.querySelector("#video2");
+if (navigator.mediaDevices.getUserMedia) {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (stream) {
+      video.srcObject = stream;
+    })
+    .catch(function (err0r) {
+      console.log("Something went wrong!");
+    });
+}
+var audio = document.querySelector("#audio2");
+if (navigator.mediaDevices.getUserMedia) {
+  navigator.mediaDevices.getUserMedia({ audio: true })
+    .then(function (stream) {
+      audio.srcObject = stream;
+    })
+    .catch(function (err0r) {
+      console.log("Something went wrong!");
+    });
+}
+</script>
+</body>
+</html>
